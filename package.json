@@ -1,12 +1,14 @@
 {
   "name": "@sumocreations/scaffolds",
-  "version": "1.0.0",
-  "types": "./lib/index.d.ts",
+  "version": "1.0.1",
+  "types": "./dist/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
-  "bin": "cmd.js",
-  "main": "lib/index.js",
+  "bin": {
+    "scaffolds": "cmd.js"
+  },
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "rm -rf ./dist && tsc",
     "publish-public": "npm init --scope=@sumocreations && npm publish --access public",
@@ -47,7 +49,7 @@
   },
   "description": "A shared library containing a mix of utility or helper functions.",
   "directories": {
-    "lib": "lib"
+    "lib": "dist"
   },
   "repository": {
     "type": "git",
