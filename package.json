@@ -1,0 +1,67 @@
+{
+  "name": "@sumocreations/scaffolds",
+  "version": "1.0.0",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "bin": "cmd.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepare": "rm -rf ./dist && tsc",
+    "publish-public": "npm init --scope=@sumocreations && npm publish --access public",
+    "clean": "rm -rf dist/",
+    "build": "yarn clean && tsc && chmod -R +x ./dist && cp ./package.json ./README.md ./dist/",
+    "dev": "tsc --watch",
+    "start": "node dist/cmd.js",
+    "test": "jest --verbose",
+    "cmd": "node --trace-warnings dist/cmd.js",
+    "build-test": "yarn build && yarn test",
+    "build-cmd": "yarn build && yarn cmd"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "12.6.8",
+    "@types/react": "16.8.23",
+    "jest": "26.6.0",
+    "prettier": "^2.1.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "simple-scaffold": "^1.0.3"
+  },
+  "description": "A shared library containing a mix of utility or helper functions.",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SumoCreations/scaffolds.git"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "react"
+  ],
+  "author": "Sumo Creations LLC",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/SumoCreations/scaffolds/issues"
+  },
+  "homepage": "https://github.com/SumoCreations/scaffolds#readme"
+}

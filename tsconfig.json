@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": ["ES2019"],
+    "declaration": true,
+    "outDir": "dist",
+    "strict": true,
+    "sourceMap": true,
+    "removeComments": false
+  },
+  "include": ["src/index.ts", "src/cmd.ts"],
+  "exclude": ["tests/*"]
+}
