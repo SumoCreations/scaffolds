@@ -173,7 +173,7 @@ export const MiniCal: React.FC<MiniCalProps> = ({
                               : end?.equals(day)
                               ? "border-green-600 bg-white text-green-600"
                               : isSelectedDate || isInRange
-                              ? "bg-primary-default text-white hover:bg-green-600"
+                              ? "bg-indigo-500 text-white hover:bg-green-600"
                               : "bg-stone-100 text-stone-800 hover:bg-stone-300"
                           )}
                           key={`date-${months}-${weeks}-${days}`}
@@ -198,3 +198,5 @@ export const MiniCal: React.FC<MiniCalProps> = ({
     </div>
   );
 };
+
+MiniCal.displayName = "Fields.MiniCal";

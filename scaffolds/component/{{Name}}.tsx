@@ -14,4 +14,4 @@ export const {{Name}}: React.FC<{{Name}}Props> = ({className, ...props}) => {
   )
 }
 
-{{Name}}.displayName = "{{Name}}";
+{{Name}}.displayName = "Components.{{Name}}";

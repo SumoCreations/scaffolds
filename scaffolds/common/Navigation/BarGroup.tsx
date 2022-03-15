@@ -1,12 +1,12 @@
-import React from 'react'
-import clsx from 'clsx'
-
-const BAR_GROUP_STYLE = `flex flex-row my-0`
+import React from "react";
+import clsx from "clsx";
 
 export interface BarGroupProps {
-  className?: string
+  className?: string;
 }
 
 export const BarGroup: React.FC<BarGroupProps> = ({ className, children }) => (
-  <div className={clsx(BAR_GROUP_STYLE, className)}>{children}</div>
-)
+  <div className={clsx("flex flex-row my-0", className)}>{children}</div>
+);
+
+BarGroup.displayName = "Navigation.BarGroup";

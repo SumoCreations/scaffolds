@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0'
-import { action } from '@storybook/addon-actions'
-import { BarDivider } from './BarDivider'
-import { BarGroup } from './BarGroup'
-import { BarItem } from './BarItem'
-import { BarSpacer } from './BarSpacer'
-import { ToolBar, ToolBarProps } from './ToolBar'
+import { Story, Meta } from "@storybook/react/types-6-0";
+import { action } from "@storybook/addon-actions";
+import { BarDivider } from "./BarDivider";
+import { BarGroup } from "./BarGroup";
+import { BarItem } from "./BarItem";
+import { BarSpacer } from "./BarSpacer";
+import { ToolBar, ToolBarProps } from "./ToolBar";
 import {
   faCut,
   faCopy,
@@ -16,45 +16,45 @@ import {
   faTrash,
   faBackward,
   faForward,
-} from '@fortawesome/pro-solid-svg-icons'
+} from "@fortawesome/pro-solid-svg-icons";
 import {
   faChevronLeft,
   faChevronRight,
-} from '@fortawesome/pro-regular-svg-icons'
-import { DateTime } from 'luxon'
+} from "@fortawesome/pro-regular-svg-icons";
+import { DateTime } from "luxon";
 
 const options = [
   {
-    name: 'Important Show',
+    name: "Important Show",
     lastAccessed: DateTime.local().minus({ minutes: 4 }),
   },
   {
-    name: 'Ready to Shoot',
+    name: "Ready to Shoot",
     lastAccessed: DateTime.local().minus({ minutes: 64 }),
   },
   {
-    name: 'Another Show',
+    name: "Another Show",
     lastAccessed: DateTime.local().minus({ hours: 9 }),
   },
   {
-    name: 'Viewed A While Ago',
+    name: "Viewed A While Ago",
     lastAccessed: DateTime.local().minus({ days: 4 }),
   },
-]
+];
 
-const MD_VISIBLE = 'hidden md:flex'
-const LG_VISIBLE = 'hidden lg:flex'
+const MD_VISIBLE = "hidden md:flex";
+const LG_VISIBLE = "hidden lg:flex";
 
 export default {
-  title: 'Navigation/Tool Bar',
+  title: "Navigation/Tool Bar",
   component: ToolBar,
-} as Meta
+} as Meta;
 
 const ToolBarStory: Story<ToolBarProps> = (args) => {
   return (
     <div
-      className="flex flex-col border border-gray-200 w-full"
-      style={{ height: '640px' }}
+      className="flex flex-col border border-stone-200 w-full"
+      style={{ height: "640px" }}
     >
       <ToolBar {...args}>
         <BarGroup className={MD_VISIBLE}>
@@ -62,7 +62,7 @@ const ToolBarStory: Story<ToolBarProps> = (args) => {
             icon={faChevronLeft}
             appearance="button"
             toolTip="Previous"
-            onClick={action('previous')}
+            onClick={action("previous")}
             shortCut="&larr;"
             mode="secondary"
           />
@@ -76,7 +76,7 @@ const ToolBarStory: Story<ToolBarProps> = (args) => {
             icon={faChevronRight}
             appearance="button"
             toolTip="Next"
-            onClick={action('next')}
+            onClick={action("next")}
             shortCut="&rarr;"
             mode="secondary"
           />
@@ -85,7 +85,7 @@ const ToolBarStory: Story<ToolBarProps> = (args) => {
         <BarItem
           icon={faPencil}
           toolTip="Edit"
-          onClick={action('edit')}
+          onClick={action("edit")}
           shortCut="e"
           mode="secondary"
           className={MD_VISIBLE}
@@ -94,7 +94,7 @@ const ToolBarStory: Story<ToolBarProps> = (args) => {
         <BarItem
           icon={faCut}
           toolTip="Cut"
-          onClick={action('cut')}
+          onClick={action("cut")}
           shortCut="ctrl-x"
           mode="secondary"
           className={MD_VISIBLE}
@@ -102,7 +102,7 @@ const ToolBarStory: Story<ToolBarProps> = (args) => {
         <BarItem
           icon={faCopy}
           toolTip="Copy"
-          onClick={action('copy')}
+          onClick={action("copy")}
           shortCut="ctrl-c"
           mode="secondary"
           className={MD_VISIBLE}
@@ -110,7 +110,7 @@ const ToolBarStory: Story<ToolBarProps> = (args) => {
         <BarItem
           icon={faPaste}
           toolTip="Paste"
-          onClick={action('paste')}
+          onClick={action("paste")}
           shortCut="ctrl-v"
           mode="secondary"
           className={MD_VISIBLE}
@@ -119,7 +119,7 @@ const ToolBarStory: Story<ToolBarProps> = (args) => {
         <BarItem
           icon={faTrash}
           toolTip="Delete"
-          onClick={action('delete')}
+          onClick={action("delete")}
           shortCut="delete"
           mode="secondary"
           className={MD_VISIBLE}
@@ -128,7 +128,7 @@ const ToolBarStory: Story<ToolBarProps> = (args) => {
         <BarItem
           icon={faPlus}
           toolTip="New Item"
-          onClick={action('new')}
+          onClick={action("new")}
           mode="negative"
           indicated
           indicatorMode="primary"
@@ -138,12 +138,12 @@ const ToolBarStory: Story<ToolBarProps> = (args) => {
         <p className="my-auto mx-auto p-20 bg-blue-100 rounded">Some Content</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export const Compact = ToolBarStory.bind({})
+export const Compact = ToolBarStory.bind({});
 
-export const Hidden: any = ToolBarStory.bind({})
+export const Hidden: any = ToolBarStory.bind({});
 Hidden.args = {
-  mode: 'hidden',
-}
+  mode: "hidden",
+};

@@ -37,3 +37,5 @@ export const DrawerItem: React.FC<DrawerItemProps> = ({
     </button>
   );
 };
+
+DrawerItem.displayName = "Drawer.DrawerItem";

@@ -23,7 +23,7 @@ const Template: Story<SortableProps> = (args) => {
     {
       index: 0,
       text: "First",
-      color: "bg-accent-default",
+      color: "bg-emerald-500",
     },
     {
       index: 1,

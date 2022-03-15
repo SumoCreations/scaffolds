@@ -1,9 +1,10 @@
-import React from 'react'
-import { Spinner } from './Spinner'
+import React from "react";
+import { Spinner } from "./Spinner";
 
-const FULL_SCREEN_CLASS = 'h-screen w-screen flex'
 export const FullScreen: React.FC = () => (
-  <div className={FULL_SCREEN_CLASS}>
+  <div className="h-screen w-screen flex">
     <Spinner size="4x" className="m-auto" />
   </div>
-)
+);
+
+FullScreen.displayName = "Indicators.FullScreen";

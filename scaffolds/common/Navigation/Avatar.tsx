@@ -65,3 +65,5 @@ export const Avatar: React.FC<AvatarProps> = ({
     )}
   </div>
 );
+
+Avatar.displayName = "Navigation.Avatar";

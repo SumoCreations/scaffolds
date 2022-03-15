@@ -21,7 +21,10 @@ export async function ScaffoldGroup({
     Scaffold({
       ...options,
       name: componentName,
-      templates: [path.join(__dirname, "../scaffolds", template, "*")],
+      templates: [
+        path.join(__dirname, "../scaffolds", template, "*"),
+        path.join(__dirname, "../scaffolds", template, "**/*"),
+      ],
       output: path.join(process.cwd(), ...output),
       createSubFolder: false,
     })

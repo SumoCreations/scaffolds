@@ -40,7 +40,7 @@ export const {{Name}} = React.forwardRef<HTML{{Name}}Element, {{Name}}Props>(
   ) => {
     const controlledInputProps = value ? { value } : {}
     return (
-      <{{Name}}
+      <input
         name={name}
         ref={forwardedRef}
         className={clsx([
@@ -58,9 +58,9 @@ export const {{Name}} = React.forwardRef<HTML{{Name}}Element, {{Name}}Props>(
         onKeyUp={onKeyUp}
         onKeyDown={onKeyDown}
         {...controlledInputProps}
-      ></{{Name}}>
+      />
     )
   }
 )
 
-{{Name}}.displayName = 'Form.{{Name}}'
+{{Name}}.displayName = 'Field.{{Name}}'

@@ -5,9 +5,9 @@ import { {{Name}} } from './{{Name}}'
 export interface {{Name}}FieldInputProps {
   placeholder?: string
   disabled?: boolean
-  onChange?: React.ChangeEventHandler<HTML{{Name}}Element>
-  onFocus?: React.FocusEventHandler<HTML{{Name}}Element>
-  onBlur?: React.FocusEventHandler<HTML{{Name}}Element>
+  onChange?: React.ChangeEventHandler<HTMLInputElement>
+  onFocus?: React.FocusEventHandler<HTMLInputElement>
+  onBlur?: React.FocusEventHandler<HTMLInputElement>
 }
 
 export type {{Name}}FieldProps = {{Name}}FieldInputProps & FieldProps
@@ -18,7 +18,7 @@ const getPaddingForField = (hasIcon?: boolean, searchField?: boolean) =>
   hasIcon ? (searchField ? 'pl-8' : 'pr-8') : ''
 
 export const {{Name}}Field = React.forwardRef<
-  HTML{{Name}}Element,
+  HTMLInputElement,
   {{Name}}FieldProps
 >(
   (
@@ -67,4 +67,4 @@ export const {{Name}}Field = React.forwardRef<
   }
 )
 
-{{Name}}Field.displayName = 'Form.{{Name}}Field'
+{{Name}}Field.displayName = 'Fields.{{Name}}Field'

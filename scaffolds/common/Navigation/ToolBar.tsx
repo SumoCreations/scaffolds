@@ -11,7 +11,7 @@ export interface ToolBarProps {
 }
 
 const style = {
-  base: "flex flex-row border-b border-gray-300 bg-white-100 p-1 relative",
+  base: "flex flex-row border-b border-stone-300 bg-white-100 p-1 relative",
   compact: "overflow-visible",
   hidden: "h-0 overflow-hidden",
 };
@@ -29,3 +29,5 @@ export const ToolBar: FC<ToolBarProps> = ({ mode = "compact", children }) => {
     </div>
   );
 };
+
+ToolBar.displayName = "Navigation.ToolBar";

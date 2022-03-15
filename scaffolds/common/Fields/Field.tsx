@@ -36,9 +36,9 @@ export const getErrorMessage = ({
 const style = {
   container: "flex flex-col",
   iconWrap: "absolute inset-y-0 flex text-contentAreaBorder",
-  icon: "m-auto text-gray-500",
+  icon: "m-auto text-stone-500",
   fieldWrap: "relative flex flex-grow flex-wrap",
-  required: "text-accent-default text-xs mx-2 my-auto",
+  required: "text-emerald-500 text-xs mx-2 my-auto",
 };
 
 const getGrowStyle = (grow?: boolean) => (grow ? "flex-grow" : "");
@@ -92,4 +92,4 @@ export const Field: React.FC<FieldProps> = ({
   </div>
 );
 
-Field.displayName = "Form.Field";
+Error.displayName = "Fields.Field";

@@ -72,7 +72,7 @@ export interface {{Name}}FieldProps extends InputProps {
 export const SEPARATOR = ' to '
 
 const SELECTED_DATE_STYLE =
-  'text-white font-bold text-sm bg-primary-default rounded p-1'
+  'text-white font-bold text-sm bg-indigo-500 rounded p-1'
 
 export const {{Name}}Field = React.forwardRef<HTMLInputElement, {{Name}}FieldProps>(
   (
@@ -154,8 +154,8 @@ export const {{Name}}Field = React.forwardRef<HTMLInputElement, {{Name}}FieldPro
                   className={clsx(
                     SELECTED_DATE_STYLE,
                     direction === 'backward'
-                      ? 'bg-primary-default'
-                      : 'bg-accent-default'
+                      ? 'bg-indigo-500'
+                      : 'bg-emerald-500'
                   )}
                 >
                   {sortedDates[0]?.toFormat(selectedDateFormat)}
@@ -174,8 +174,8 @@ export const {{Name}}Field = React.forwardRef<HTMLInputElement, {{Name}}FieldPro
                       className={clsx(
                         SELECTED_DATE_STYLE,
                         direction === 'forward'
-                          ? 'bg-primary-default'
-                          : 'bg-accent-default'
+                          ? 'bg-indigo-500'
+                          : 'bg-emerald-500'
                       )}
                     >
                       {sortedDates[1]?.toFormat(selectedDateFormat)}
@@ -184,7 +184,7 @@ export const {{Name}}Field = React.forwardRef<HTMLInputElement, {{Name}}FieldPro
                 ) : null}
               </>
             ) : (
-              <p className="text-gray-400">
+              <p className="text-stone-400">
                 {placeholder ??
                   clsx(
                     'i.e. ',
@@ -200,7 +200,7 @@ export const {{Name}}Field = React.forwardRef<HTMLInputElement, {{Name}}FieldPro
             <div className="text-contentAreaBorder absolute inset-y-0 right-0 flex">
               <FontAwesomeIcon
                 icon={faCalendarAlt as IconProp}
-                className="my-auto mr-2 text-gray-500"
+                className="my-auto mr-2 text-stone-500"
               />
             </div>
           </button>
@@ -241,3 +241,5 @@ export const {{Name}}Field = React.forwardRef<HTMLInputElement, {{Name}}FieldPro
     )
   }
 )
+
+{{Name}}Field.displayName = 'Fields.{{Name}}Field'

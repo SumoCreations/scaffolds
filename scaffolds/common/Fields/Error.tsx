@@ -8,3 +8,5 @@ const style = {
 export const Error: React.FC = ({ children }) => (
   <span className={style.error}>{children}</span>
 );
+
+Error.displayName = "Fields.Error";

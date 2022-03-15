@@ -88,4 +88,4 @@ export const Fields: React.FC<FieldsProps> = ({
   </ul>
 );
 
-Fields.displayName = "Form.Fields";
+Fields.displayName = "Fields.Fields";

@@ -24,3 +24,5 @@ export const ScrollToTop: React.FC = () => {
 
   return null;
 };
+
+ScrollToTop.displayName = "Behavior.ScrollToTop";

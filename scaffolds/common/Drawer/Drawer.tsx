@@ -11,12 +11,12 @@ export interface DrawerProps {
 
 const style = {
   container:
-    "fixed left-0 top-0 w-96 bg-accent-default flex flex-col pt-4 md:pt-12 px-4 pb-4 z-40 h-screen text-white",
+    "fixed left-0 top-0 w-96 bg-emerald-500 flex flex-col pt-4 md:pt-12 px-4 pb-4 z-40 h-screen text-white",
   title: "flex text-2xl font-display font-semibold mb-8 ml-8",
-  button: "w-12 h-12 mr-2 flex hover:bg-accent-dark rounded-full",
+  button: "w-12 h-12 mr-2 flex hover:bg-emerald-700 rounded-full",
   icon: "m-auto",
   overlay:
-    "fixed top-0 left-0 w-screen h-screen z-30 bg-primary-default bg-opacity-10",
+    "fixed top-0 left-0 w-screen h-screen z-30 bg-indigo-500 bg-opacity-10",
 };
 
 export const Drawer: React.FC<DrawerProps> = ({
@@ -53,3 +53,5 @@ export const Drawer: React.FC<DrawerProps> = ({
     </div>
   ) : null;
 };
+
+Drawer.displayName = "Drawer.Drawer";

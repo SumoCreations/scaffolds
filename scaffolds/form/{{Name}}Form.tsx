@@ -10,10 +10,10 @@ import {
 import { camelCase } from "lodash";
 
 // Assumes we have some existing UI implementation for forms in our library. Replace as needed.
-import { Button, TextField, Fields, ErrorList } from "../Form";
+import { Button, TextField, Fields, ErrorList } from "../Fields";
 import { AbsoluteOverlay } from "../Indicators";
 
-export type {{Name}}Values = {
+export type {{Name}}FormValues = {
   email: string;
   password: string;
 };
@@ -23,12 +23,12 @@ const schema = yup.object({
   password: yup.string().required("cannot be blank"),
 });
 
-export interface {{Name}}Props extends FormProps<{{Name}}Values> {
+export interface {{Name}}FormProps extends FormProps<{{Name}}FormValues> {
   loading?: boolean;
   hasAgreedToTerms?: (agreed: boolean) => void;
 }
 
-export const {{Name}}: React.FC<{{Name}}Props> = ({
+export const {{Name}}Form: React.FC<{{Name}}FormProps> = ({
   onSubmit: externalSubmitHandler,
   loading,
   defaultValues,
@@ -91,3 +91,5 @@ export const {{Name}}: React.FC<{{Name}}Props> = ({
     </form>
   );
 };
+
+{{Name}}Form.displayName = 'Forms.{{Name}}Form'
