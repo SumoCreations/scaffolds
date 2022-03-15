@@ -1,14 +1,14 @@
 {
   "name": "@sumocreations/scaffolds",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "main": "index.js",
   "bin": {
-    "scaffolds": "cmd.js"
+    "scaffold": "./dist/cmd.js"
   },
-  "main": "dist/index.js",
   "scripts": {
     "prepare": "rm -rf ./dist && tsc",
     "publish-public": "npm init --scope=@sumocreations && npm publish --access public",
