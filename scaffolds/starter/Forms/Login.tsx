@@ -1,35 +1,35 @@
-import React, { useEffect, useRef } from "react";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import React, { useEffect, useRef } from 'react'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
 import {
   useDefaultValueListener,
   FormProps,
   ErrorMap,
-} from "@sumocreations/forms";
-import { camelCase } from "lodash";
+} from '@sumocreations/forms'
+import { camelCase } from 'lodash'
 
 // Assumes we have some existing UI implementation for forms in our library. Replace as needed.
 import { TextField, Fields, ErrorList } from '../Fields'
 import { Button } from '../Navigation'
 import { AbsoluteOverlay } from '../Indicators'
 
-export type {{Name}}FormValues = {
-  email: string;
-  password: string;
-};
-
-const schema = yup.object({
-  email: yup.string().required("cannot be blank"),
-  password: yup.string().required("cannot be blank"),
-});
-
-export interface {{Name}}FormProps extends FormProps<{{Name}}FormValues> {
-  loading?: boolean;
-  hasAgreedToTerms?: (agreed: boolean) => void;
+export type LoginValues = {
+  email: string
+  password: string
 }
 
-export const {{Name}}Form: React.FC<{{Name}}FormProps> = ({
+const schema = yup.object({
+  email: yup.string().required('cannot be blank'),
+  password: yup.string().required('cannot be blank'),
+})
+
+export interface LoginProps extends FormProps<LoginValues> {
+  loading?: boolean
+  hasAgreedToTerms?: (agreed: boolean) => void
+}
+
+export const Login: React.FC<LoginProps> = ({
   onSubmit: externalSubmitHandler,
   loading,
   defaultValues,
@@ -41,30 +41,30 @@ export const {{Name}}Form: React.FC<{{Name}}FormProps> = ({
     formState: { errors: formErrors },
     setError,
     reset,
-  } = useForm<{{Name}}Values>({
+  } = useForm<LoginValues>({
     resolver: yupResolver(schema),
-    mode: "onBlur",
-  });
+    mode: 'onBlur',
+  })
 
-  useDefaultValueListener<{{Name}}Values>(defaultValues, reset);
+  useDefaultValueListener<LoginValues>(defaultValues, reset)
 
   const handleFormSubmit = handleSubmit(async (data) => {
-    const { errors = {} } = (await externalSubmitHandler(data)) ?? {};
-    const keys = Object.keys(errors);
+    const { errors = {} } = (await externalSubmitHandler(data)) ?? {}
+    const keys = Object.keys(errors)
     if (keys.length) {
       keys.map((key) =>
-        setError(camelCase(key) as keyof {{Name}}Values, {
+        setError(camelCase(key) as keyof LoginValues, {
           message: errors[key],
         })
-      );
+      )
     }
-  });
+  })
 
-  const field = useRef<HTMLInputElement>(null);
+  const field = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    field.current?.focus();
-  });
+    field.current?.focus()
+  })
 
   return (
     <form onSubmit={handleFormSubmit} className="relative">
@@ -85,12 +85,10 @@ export const {{Name}}Form: React.FC<{{Name}}FormProps> = ({
         />
         <ErrorList errors={formErrors as ErrorMap} />
         <Button type="submit" className="mt-2 w-full">
-          {submitTitle ?? "Submit Form"}
+          {submitTitle ?? 'Submit Form'}
         </Button>
       </Fields>
       {loading ? <AbsoluteOverlay /> : null}
     </form>
-  );
-};
-
-{{Name}}Form.displayName = 'Forms.{{Name}}Form'
+  )
+}
