@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 
-export interface {{Name}}Props {
+export interface {{Name}}InputProps {
   name: string
   className?: string
   style?: React.CSSProperties
@@ -20,7 +20,7 @@ const style = {
   input: 'font-body border rounded p-2 flex flex-grow max-w-full focus:outline-none focus:border-green-300'
 } 
 
-export const {{Name}} = React.forwardRef<HTML{{Name}}Element, {{Name}}Props>(
+export const {{Name}}Input = React.forwardRef<HTML{{Name}}Element, {{Name}}InputProps>(
   (
     {
       name,
@@ -63,4 +63,4 @@ export const {{Name}} = React.forwardRef<HTML{{Name}}Element, {{Name}}Props>(
   }
 )
 
-{{Name}}.displayName = 'Field.{{Name}}'
+{{Name}}.displayName = 'Field.{{Name}}Input'
