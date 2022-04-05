@@ -8,12 +8,13 @@ const handleSubmit = async (values: {{Name}}FormValues) => {
   return undefined;
 };
 
-test("should render the placeholder value", async () => {
+test("should render the initial value", async () => {
   render(
-    <Login
+    <{{Name}}Form
       defaultValues={{ email: "admin@example.com", password: "123456789" }}
       onSubmit={handleSubmit}
     />
   );
   expect(screen.getByDisplayValue("admin@example.com")).toBeInTheDocument();
+  expect(screen.getByDisplayValue("123456789")).toBeInTheDocument();
 });

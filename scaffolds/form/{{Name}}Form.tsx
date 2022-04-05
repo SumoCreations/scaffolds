@@ -41,19 +41,19 @@ export const {{Name}}Form: React.FC<{{Name}}FormProps> = ({
     formState: { errors: formErrors },
     setError,
     reset,
-  } = useForm<{{Name}}Values>({
+  } = useForm<{{Name}}FormValues>({
     resolver: yupResolver(schema),
     mode: "onBlur",
   });
 
-  useDefaultValueListener<{{Name}}Values>(defaultValues, reset);
+  useDefaultValueListener<{{Name}}FormValues>(defaultValues, reset);
 
   const handleFormSubmit = handleSubmit(async (data) => {
     const { errors = {} } = (await externalSubmitHandler(data)) ?? {};
     const keys = Object.keys(errors);
     if (keys.length) {
       keys.map((key) =>
-        setError(camelCase(key) as keyof {{Name}}Values, {
+        setError(camelCase(key) as keyof {{Name}}FormValues, {
           message: errors[key],
         })
       );
