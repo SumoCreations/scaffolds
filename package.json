@@ -20,7 +20,8 @@
     "test": "jest --verbose",
     "cmd": "node --trace-warnings dist/cmd.js",
     "build-test": "yarn build && yarn test",
-    "build-cmd": "yarn build && yarn cmd"
+    "build-cmd": "yarn build && yarn cmd",
+    "scaffold": "yarn ts-node ./src/cmd.ts"
   },
   "eslintConfig": {
     "extends": "react-app"
