@@ -19,12 +19,16 @@ npx @sumocreations/scaffold@latest <...args>
 
 ### Generate a Component
 
+A bare bones example:
+
 ```bash
 yarn scaffold Button -t component
 ```
 
+In a module with some pre-defined props:
+
 ```bash
-yarn scaffold Common/Button -t component
+yarn scaffold Common/Button -t component -p "label:string disabled?:boolean"
 ```
 
 ### Generate a Form (react-hook-form)
@@ -37,4 +41,12 @@ yarn scaffold Form/Signup -t form
 
 ```bash
 yarn scaffold Field/TextArea -t field
+```
+
+## Developing this Package
+
+To refine existing or create new templates, it's best to test them locally in this package. To do so just run the local scaffold script and use `./tmp` as your output directory:
+
+```bash
+yarn scaffold --name test -t component ./tmp/Component/TestComponent
 ```
