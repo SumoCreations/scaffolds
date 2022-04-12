@@ -25,15 +25,14 @@ const schema = yup.object({
 });
 
 export interface {{Name}}FormProps extends FormProps<{{Name}}FormValues> {
-  loading?: boolean;
-  hasAgreedToTerms?: (agreed: boolean) => void;
-}
+  loading?: boolean
+  {{props}} }
 
 export const {{Name}}Form: React.FC<{{Name}}FormProps> = ({
   onSubmit: externalSubmitHandler,
   loading,
   defaultValues,
-  submitTitle,
+  submitTitle{{deconstructedProps}}
 }) => {
   const {
     handleSubmit,
@@ -93,4 +92,4 @@ export const {{Name}}Form: React.FC<{{Name}}FormProps> = ({
   );
 };
 
-{{Name}}Form.displayName = 'Forms.{{Name}}Form'
+{{Name}}Form.displayName = '{{moduleName}}.{{Name}}Form'

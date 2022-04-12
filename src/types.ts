@@ -10,4 +10,5 @@ export interface ScaffoldGroupCmdConfig {
   quiet: boolean;
   verbose: LogLevel;
   dryRun: boolean;
+  props?: string[];
 }

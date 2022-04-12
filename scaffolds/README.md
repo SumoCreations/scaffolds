@@ -19,12 +19,16 @@ npx @sumocreations/scaffold@latest <...args>
 
 ### Generate a Component
 
+A bare bones example:
+
 ```bash
 yarn scaffold Button -t component
 ```
 
+In a module with some pre-defined props:
+
 ```bash
-yarn scaffold Common/Button -t component
+yarn scaffold Common/Button -t component -p "label:string disabled?:boolean"
 ```
 
 ### Generate a Form (react-hook-form)

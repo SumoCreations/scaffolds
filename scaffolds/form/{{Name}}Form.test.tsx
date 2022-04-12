@@ -11,7 +11,7 @@ const handleSubmit = async (values: {{Name}}FormValues) => {
 test("should render the initial value", async () => {
   render(
     <{{Name}}Form
-      defaultValues={{ email: "admin@example.com", password: "123456789" }}
+      defaultValues={ { email: "admin@example.com", password: "123456789" } }
       onSubmit={handleSubmit}
     />
   );

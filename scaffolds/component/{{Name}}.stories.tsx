@@ -4,7 +4,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { {{Name}}, {{Name}}Props } from "./{{Name}}";
 
 export default {
-  title: "{{Name}}",
+  title: "{{moduleName}}/{{Name}}",
   component: {{Name}},
 } as Meta;
 

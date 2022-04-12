@@ -40,6 +40,13 @@ export function parseCliArgs(args = process.argv.slice(2)) {
       parse: (v) => JSON.parse(v),
     })
     .option({
+      name: "props",
+      aliases: ["p"],
+      description:
+        "Add custom props for your component. This should just be a string in the form of name:type separated by spaces for example: 'name:string disabled?:boolean'.",
+      parse: (p) => p.split(" "),
+    })
+    .option({
       name: "create-sub-folder",
       aliases: ["s"],
       boolean: true,

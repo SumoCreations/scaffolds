@@ -4,7 +4,7 @@ import { {{Name}}Form, {{Name}}FormProps, {{Name}}FormValues } from './{{Name}}'
 import { wait } from 'utils'
 
 export default {
-  title: 'Forms/{{Name}}Form',
+  title: '{{moduleName}}/{{Name}}Form',
 } as Meta
 
 const Template: Story<{{Name}}Props> = (args) => {
