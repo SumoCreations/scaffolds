@@ -12,6 +12,7 @@ const Template: Story<{{Name}}Props> = (args) => <{{Name}} {...args} />;
 
 const args: {{Name}}Props = {
   className: ""
+  {{args}}
 };
 
 export const Standard = Template.bind({});
