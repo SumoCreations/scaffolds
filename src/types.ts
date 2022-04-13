@@ -11,4 +11,7 @@ export interface ScaffoldGroupCmdConfig {
   verbose: LogLevel;
   dryRun: boolean;
   props?: string[];
+  returnProps?: string[];
+  path?: string;
+  method?: string;
 }

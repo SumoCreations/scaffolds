@@ -43,8 +43,25 @@ export function parseCliArgs(args = process.argv.slice(2)) {
       name: "props",
       aliases: ["p"],
       description:
-        "Add custom props for your component. This should just be a string in the form of name:type separated by spaces for example: 'name:string disabled?:boolean'.",
+        "Add custom props for your component or params for an API call. This should just be a string in the form of name:type separated by spaces for example: 'name:string disabled?:boolean'.",
       parse: (p) => p.split(" "),
+    })
+    .option({
+      name: "returnProps",
+      aliases: ["rp"],
+      description:
+        "Add custom return value props. This should just be a string in the form of name:type separated by spaces for example: 'name:string disabled?:boolean'.",
+      parse: (p) => p.split(" "),
+    })
+    .option({
+      name: "method",
+      aliases: ["m"],
+      description: "Indicate an HTTP method for your API call.",
+    })
+    .option({
+      name: "path",
+      aliases: ["pa"],
+      description: "Indicate a path for your API call.",
     })
     .option({
       name: "create-sub-folder",
