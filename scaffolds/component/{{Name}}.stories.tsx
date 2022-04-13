@@ -11,7 +11,6 @@ export default {
 const Template: Story<{{Name}}Props> = (args) => <{{Name}} {...args} />;
 
 const args: {{Name}}Props = {
-  className: ""
   {{args}}
 };
 
