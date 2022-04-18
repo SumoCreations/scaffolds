@@ -61,6 +61,7 @@ export async function ScaffoldGroup({
   }
 
   const template = String(options.template).toLowerCase();
+  const method = options.method ?? "post";
 
   let data = {
     ...(options.data ?? {}),
@@ -69,7 +70,10 @@ export async function ScaffoldGroup({
     returnProps: buildProps(options.returnProps),
     deconstructedProps: deconstruct(options.props),
     path: options.path ?? "",
-    method: options.method ?? "post",
+    method,
+    requestParams: ["get", "delete"].includes(method)
+      ? "`${url}?${new URLSearchParams({ ...params })}`"
+      : "url, params",
   };
 
   scaffolds.push(

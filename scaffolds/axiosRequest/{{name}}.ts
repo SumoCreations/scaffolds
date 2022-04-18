@@ -12,7 +12,7 @@ export interface {{Name}}Response {
 
 export const {{name}} = async (
   params: {{Name}}Params,
-  { debug, instance = getInstance() }: RequestConfig = {}
+  { debug, instance = getInstance(), ...config }: RequestConfig = {}
 ) => {
   const url = "{{path}}";
 
@@ -20,6 +20,6 @@ export const {{name}} = async (
     console.debug(`{{ upperCase method }} ${url}`);
   }
 
-  const response = await instance.{{method}}(url, params);
+  const response = await instance.{{method}}({{requestParams}}, config);
   return response.data as {{Name}}Response;
 };
