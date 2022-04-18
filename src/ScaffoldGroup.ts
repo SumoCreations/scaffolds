@@ -38,7 +38,7 @@ const argForType = (type: string) => {
 const buildArgs = (props?: string[]) =>
   (props ?? []).reduce((acc, prop, i) => {
     const [name, type] = prop.split(":");
-    return `${acc}${name}: ${argForType(
+    return `${acc}${name.replace(/[\W_]+/g, "")}: ${argForType(
       type.indexOf("[") > -1
         ? "array"
         : type.indexOf("=>") > -1
