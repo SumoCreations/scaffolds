@@ -1,16 +1,16 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { {{Name}}Form, {{Name}}FormValues } from "./{{Name}}Form";
+import { {{Name}}, {{Name}}Values } from "./{{Name}}";
 
-const handleSubmit = async (values: {{Name}}FormValues) => {
+const handleSubmit = async (values: {{Name}}Values) => {
   await new Promise((res) => setTimeout(res, 1000));
   return undefined;
 };
 
 test("should render the initial value", async () => {
   render(
-    <{{Name}}Form
+    <{{Name}}
       defaultValues={ { email: "admin@example.com", password: "123456789" } }
       onSubmit={handleSubmit}
     />

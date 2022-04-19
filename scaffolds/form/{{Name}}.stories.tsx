@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import { Story, Meta } from '@storybook/react'
-import { {{Name}}Form, {{Name}}FormProps, {{Name}}FormValues } from './{{Name}}'
+import { {{Name}}, {{Name}}Props, {{Name}}Values } from './{{Name}}'
 import { wait } from 'utils'
 
 export default {
-  title: '{{moduleName}}/{{Name}}Form',
+  title: '{{moduleName}}/{{Name}}',
 } as Meta
 
 const Template: Story<{{Name}}Props> = (args) => {
   const [loading, setLoading] = useState(args.loading ?? false)
 
-  const onSubmit: any = async (values: {{Name}}FormValues) => {
+  const onSubmit: any = async (values: {{Name}}Values) => {
     setLoading(true)
     await wait(1)
     setLoading(false)
@@ -25,7 +25,7 @@ const Template: Story<{{Name}}Props> = (args) => {
   )
 }
 
-const args: {{Name}}FormProps = {
+const args: {{Name}}Props = {
   onSubmit: async (values) => {
     await wait(1)
     console.log('Submitted', values)

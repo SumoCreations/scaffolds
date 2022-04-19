@@ -14,7 +14,7 @@ import { TextField, Fields, ErrorList } from '../Fields'
 import { Button } from '../Navigation'
 import { AbsoluteOverlay } from '../Indicators'
 
-export type {{Name}}FormValues = {
+export type {{Name}}Values = {
   email: string;
   password: string;
 };
@@ -24,11 +24,11 @@ const schema = yup.object({
   password: yup.string().required("cannot be blank"),
 });
 
-export interface {{Name}}FormProps extends FormProps<{{Name}}FormValues> {
+export interface {{Name}}Props extends FormProps<{{Name}}Values> {
   loading?: boolean
   {{props}} }
 
-export const {{Name}}Form: React.FC<{{Name}}FormProps> = ({
+export const {{Name}}: React.FC<{{Name}}Props> = ({
   onSubmit: externalSubmitHandler,
   loading,
   defaultValues,
@@ -40,19 +40,19 @@ export const {{Name}}Form: React.FC<{{Name}}FormProps> = ({
     formState: { errors: formErrors },
     setError,
     reset,
-  } = useForm<{{Name}}FormValues>({
+  } = useForm<{{Name}}Values>({
     resolver: yupResolver(schema),
     mode: "onBlur",
   });
 
-  useDefaultValueListener<{{Name}}FormValues>(defaultValues, reset);
+  useDefaultValueListener<{{Name}}Values>(defaultValues, reset);
 
   const handleFormSubmit = handleSubmit(async (data) => {
     const { errors = {} } = (await externalSubmitHandler(data)) ?? {};
     const keys = Object.keys(errors);
     if (keys.length) {
       keys.map((key) =>
-        setError(camelCase(key) as keyof {{Name}}FormValues, {
+        setError(camelCase(key) as keyof {{Name}}Values, {
           message: errors[key],
         })
       );
@@ -92,4 +92,4 @@ export const {{Name}}Form: React.FC<{{Name}}FormProps> = ({
   );
 };
 
-{{Name}}Form.displayName = '{{moduleName}}.{{Name}}Form'
+{{Name}}.displayName = '{{moduleName}}.{{Name}}'
