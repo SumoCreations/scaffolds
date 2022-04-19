@@ -3217,10 +3217,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
-simple-scaffold@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/simple-scaffold/-/simple-scaffold-1.0.3.tgz#f05bccf05197e1b14ca71681d81942789143079c"
-  integrity sha512-36/YovDq1bqmEI6N5Vc7FJdYsZSAnrfneuI0O5KF0vkiyK4LeVCruO0sEbc9QZE9vE1gqdj+RI0FumEF/PganQ==
+simple-scaffold@^1.1.0-alpha.1:
+  version "1.1.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/simple-scaffold/-/simple-scaffold-1.1.0-alpha.1.tgz#899255dc1af508bcb3d71a7704c04c1f2f9fde2d"
+  integrity sha512-iUBAsatVJxMqMIeNuUA+RvlvIp3kf0OXIaBioZjE7Owx4FjpzgZ0I3yFmSuOc6VUshh1E9Pniv2vfYvSVxZaXw==
   dependencies:
     chalk "^4.1.2"
     glob "^7.1.3"
