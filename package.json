@@ -47,7 +47,8 @@
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "simple-scaffold": "^1.1.0-alpha.1"
+    "clsx": "^1.1.1",
+    "simple-scaffold": "1.1.0-alpha.6"
   },
   "description": "A shared library containing a mix of utility or helper functions.",
   "directories": {

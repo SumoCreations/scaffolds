@@ -31,7 +31,7 @@ const args: {{Name}}Props = {
     console.log('Submitted', values)
     return undefined
   },
-  defaultValues: { email: 'admin@example.com', password: '123456789' },
+  defaultValues: { {{defaultValues}} },
 }
 
 export const Primary = Template.bind({})

@@ -1027,6 +1027,11 @@ cliui@^6.0.0:
     strip-ansi "^6.0.0"
     wrap-ansi "^6.2.0"
 
+clsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -1153,6 +1158,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+date-fns@^2.28.0:
+  version "2.28.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.28.0.tgz#9570d656f5fc13143e50c975a3b6bbeb46cd08b2"
+  integrity sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==
 
 debug@4, debug@^4.1.0, debug@^4.1.1:
   version "4.3.3"
@@ -3217,12 +3227,13 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
-simple-scaffold@^1.1.0-alpha.1:
-  version "1.1.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/simple-scaffold/-/simple-scaffold-1.1.0-alpha.1.tgz#899255dc1af508bcb3d71a7704c04c1f2f9fde2d"
-  integrity sha512-iUBAsatVJxMqMIeNuUA+RvlvIp3kf0OXIaBioZjE7Owx4FjpzgZ0I3yFmSuOc6VUshh1E9Pniv2vfYvSVxZaXw==
+simple-scaffold@1.1.0-alpha.6:
+  version "1.1.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/simple-scaffold/-/simple-scaffold-1.1.0-alpha.6.tgz#00af356de40f930efa1914d4b04225e36f67d7b9"
+  integrity sha512-mZdicknKSPf1ONZLC2LTo78iicD/oVafWb3kwadwe4ghjDr6ajQ70rxIow0EXHq27mvWikizZKc7x3oIH62rQw==
   dependencies:
     chalk "^4.1.2"
+    date-fns "^2.28.0"
     glob "^7.1.3"
     handlebars "^4.7.7"
     lodash "^4.17.21"

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -15,13 +15,11 @@ import { Button } from '../Navigation'
 import { AbsoluteOverlay } from '../Indicators'
 
 export type {{Name}}Values = {
-  email: string;
-  password: string;
+  {{values}}
 };
 
 const schema = yup.object({
-  email: yup.string().required("cannot be blank"),
-  password: yup.string().required("cannot be blank"),
+  {{validations}}
 });
 
 export interface {{Name}}Props extends FormProps<{{Name}}Values> {
@@ -59,29 +57,10 @@ export const {{Name}}: React.FC<{{Name}}Props> = ({
     }
   });
 
-  const field = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    field.current?.focus();
-  });
-
   return (
     <form onSubmit={handleFormSubmit} className="relative">
       <Fields register={register} errors={formErrors} grow className="pb-2">
-        <TextField
-          name="email"
-          label="Email"
-          placeholder="Email Address"
-          ref={field}
-          className="w-full"
-        />
-        <TextField
-          name="password"
-          label="Password"
-          placeholder="Password"
-          type="password"
-          className="w-full"
-        />
+        {{fields}}
         <ErrorList errors={formErrors as ErrorMap} />
         <Button type="submit" className="mt-2 w-full">
           {submitTitle ?? "Submit Form"}

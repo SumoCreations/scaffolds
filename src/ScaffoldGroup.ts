@@ -2,49 +2,13 @@ import Scaffold from 'simple-scaffold'
 import path from 'path'
 import { ScaffoldGroupCmdConfig } from './types'
 import prettier from 'prettier'
-
-const deconstruct = (props?: string[]) =>
-  (props ?? []).reduce((acc, prop) => {
-    const [name] = prop.split(':')
-    return `${acc}, ${name.replace(/[^\w\s]/gi, '')}`
-  }, '')
-
-const buildProps = (props?: string[]) =>
-  (props ?? []).reduce((acc, prop, i) => {
-    const [name, type] = prop.split(':')
-    return `${acc}${name}: ${type}${i < (props?.length ?? 0) - 1 ? '\n  ' : ''}`
-  }, '')
-
-const argForType = (type: string) => {
-  switch (type) {
-    case 'string':
-      return '"example"'
-    case 'number':
-      return '1'
-    case 'boolean':
-      return 'true'
-    case 'object':
-      return '{}'
-    case 'array':
-      return '[]'
-    case 'block':
-      return '() => {}'
-    default:
-      return '{} as any'
-  }
-}
-
-const buildArgs = (props?: string[]) =>
-  (props ?? []).reduce((acc, prop, i) => {
-    const [name, type] = prop.split(':')
-    return `${acc}${name.replace(/[\W_]+/g, '')}: ${argForType(
-      type.indexOf('[') > -1
-        ? 'array'
-        : type.indexOf('=>') > -1
-        ? 'block'
-        : type
-    )}${i < (props?.length ?? 0) ? ',\n  ' : ''}`
-  }, '')
+import { buildArgs } from './buildArgs'
+import { buildFields } from './buildFields'
+import { deconstruct } from './deconstruct'
+import { buildProps } from './buildProps'
+import { buildValidations } from './buildValidations'
+import { buildValues } from './buildValues'
+import { buildDefaultValues } from './buildDefaultValues'
 
 export async function ScaffoldGroup({
   name,
@@ -72,10 +36,14 @@ export async function ScaffoldGroup({
     method,
     requestParams: ['get', 'delete'].includes(method)
       ? '`${url}?${new URLSearchParams({ ...params })}`'
-      : 'url, params'
+      : 'url, params',
+    fields: options.fields ? buildFields(options.fields ?? '') : '',
+    validations: options.fields ? buildValidations(options.fields ?? '') : '',
+    values: options.fields ? buildValues(options.fields ?? '') : '',
+    defaultValues: options.fields
+      ? buildDefaultValues(options.fields ?? '')
+      : ''
   }
-
-  const prettierOptions = await prettier.resolveConfig(process.cwd())
 
   scaffolds.push(
     Scaffold({
@@ -91,11 +59,13 @@ export async function ScaffoldGroup({
       },
       output: path.join(process.cwd(), ...output),
       createSubFolder: false,
-      beforeWrite: (content) =>
-        prettier.format(content.toString(), {
+      beforeWrite: async (content) => {
+        const prettierOptions = await prettier.resolveConfig(process.cwd())
+        return prettier.format(content.toString(), {
           ...prettierOptions,
           parser: 'babel-ts'
         })
+      }
     })
   )
 
