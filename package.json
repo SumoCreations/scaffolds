@@ -21,7 +21,9 @@
     "cmd": "node --trace-warnings dist/cmd.js",
     "build-test": "yarn build && yarn test",
     "build-cmd": "yarn build && yarn cmd",
-    "scaffold": "yarn ts-node ./src/cmd.ts"
+    "scaffold": "dotenv && yarn hygen",
+    "component": "yarn ts-node ./src/openAi.ts",
+    "makeNew": "ts-node ./src/hygen.ts component new"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,13 +43,17 @@
   "devDependencies": {
     "@types/node": "12.6.8",
     "@types/react": "16.8.23",
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
     "jest": "26.6.0",
+    "openai": "^3.2.1",
     "prettier": "^2.1.2",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.2"
   },
   "dependencies": {
     "clsx": "^1.1.1",
+    "hygen": "^6.2.11",
     "simple-scaffold": "1.1.0-alpha.6"
   },
   "description": "A shared library containing a mix of utility or helper functions.",

@@ -11,6 +11,6 @@
     "sourceMap": true,
     "removeComments": false
   },
-  "include": ["src/index.ts", "src/cmd.ts"],
+  "include": ["src/index.ts", "src/cmd.ts", "src/hygen.ts", "src/openAi.ts"],
   "exclude": ["tests/*"]
 }
